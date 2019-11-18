@@ -1,4 +1,4 @@
-document.cookie = 'orders=' + JSON.stringify(orders) + ';';
+document.cookie = 'orders=' + JSON.stringify([{name: 'test', des: 'test'}]) + ';';
 
 function getOrders() {
     const cookie = decodeURIComponent(document.cookie);
