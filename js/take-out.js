@@ -1,11 +1,7 @@
-document.cookie = 'orders=' + JSON.stringify([{name: 'test', des: 'test'}]) + ';';
+window.sessionStorage.setItem('modeOrders', JSON.stringify([{name: 'test', desc: 'test'}]));
 
 function getOrders() {
-    const cookie = decodeURIComponent(document.cookie);
-    const valStart = 1 + cookie.indexOf('=');
-    const orders = JSON.parse(cookie.substring(valStart));
-
-    return orders;
+    return JSON.parse(window.sessionStorage.getItem('modeOrders'));
 }
 
 function createOrderCard(order) {
