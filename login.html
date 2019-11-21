@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Noir Restaurant</title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">
+        <script src="./js/core.js"></script>
+        <!--<script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>-->
+        <style type="text/css">
+            div.credentials{
+				display: inline-block;
+				text-align: center;
+				top: 50%;
+				left: 50%;
+				background-color: #ededed;
+				border: 5px solid #fff;
+				padding: .5em 3em;
+				z-index: 2;
+			}
+        </style>
+    </head>
+    <body>
+        <nav class="navbar is-primary">
+            <div class="navbar-brand">
+                <a class="navbar-item" href="./">
+                    <img src="./assets/logo.png"/>
+                </a>
+                <div id="nav-toggle" class="navbar-burger" data-target="nav-menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+            <div id="nav-menu" class="navbar-menu">
+                <div class="navbar-start">
+                    <a class="navbar-item" href="./menu.html">
+                        Menu
+                    </a>
+                    <a class="navbar-item" href="./take-out.html">
+                        Take Out
+                    </a>
+                    <a class="navbar-item" href="./promotions.html">
+                        Promotions
+                    </a>
+                    <a class="navbar-item" href="./locations.html">
+                        Locations
+                    </a>
+                    <div class="navbar-item has-dropdown is-hoverable">
+                        <span class="navbar-link">More</span>
+                        <div class="navbar-dropdown">
+                            <a class="navbar-item" href="./about-us.html">
+                                About Us
+                            </a>
+                            <a class="navbar-item" href="./contact-us.html">
+                                Contact Us
+                            </a>
+                            <a class="navbar-item" href="./careers.html">
+                                Careers
+                            </a>
+                            <a class="navbar-item" href="./privacy-policy.html">
+                                Privacy Policy
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="navbar-end">
+                    <div class="navbar-item buttons">
+                        <a class="button is-info">Sign up</a>
+                        <a class="button is-secondary">Log in</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <section class="has-text-centered">
+		
+		<div class="credentials">
+		<h1 class="is-size-2">Log In</h1>
+		<br/>
+        <form method="post" type="submit" name="myForm" id="myForm" onsubmit="return validateForm();" action="take-out.html">
+			<div class="columns">
+				<div class="column"><strong id="idLabel">Username</strong></div>
+				<div class="column"><input type="text" name="id" size="22"/></div>
+			</div>
+			<div class="columns">
+				<div class="column"><strong name="passLabel">Password</strong></div>
+				<div class="column"><input type="password" name="pass" value="" size="22" /></div>
+			</div>
+			<div class="columns">
+				<div class="column"><input type="submit" value="Log In" />
+					<input type="reset" value="Reset"/> </div>
+			</div>			
+		</form>
+        </div>    
+        </section>
+		<script>
+			function validateForm(){
+				var isValid = true;
+				
+				if(document.myForm.id.value.length<=0){
+					isValid = false;
+					document.myForm.id.placeholder = "You must enter a username";
+				}
+				
+				if(document.myForm.pass.value.length<=0){
+					isValid = false;
+					document.myForm.pass.placeholder = "You must enter a password";
+				}
+				
+				return isValid;
+			};
+
+		</script>
+        <footer class="footer">
+            <div class="container has-text-centered">
+                <div class="columns">
+                    <div class="column">
+                        <a href="./about-us.html">
+                            About Us
+                        </a>
+                    </div>
+                    <div class="column">
+                        <a href="./contact-us.html">
+                            Contact Us
+                        </a>
+                    </div>
+                    <div class="column">
+                        <a href="./careers.html">
+                            Careers
+                        </a>
+                    </div>
+                    <div class="column">
+                        <a href="./privacy-policy.html">
+                            Privacy Policy
+                        </a>
+                    </div>
+                </div>
+                <div class="content has-text-centered">
+                    Copyright &copy; 2019 Noir, Industries.
+                </div>
+            </div>
+        </footer>
+    </body>
+</html>
