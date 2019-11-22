@@ -1,0 +1,16 @@
+{
+    "name": "Mode Project 1",
+    "short_name": "mode-p1",
+    "description": "A simple restaurant website",
+    "icons": [
+        {
+            "src": "assets/logo.png",
+            "sizes": "64x64",
+            "type": "image/png"
+        }
+    ],
+    "start_url": "/index.html",
+    "display": "fullscreen",
+    "theme_color": "#fff",
+    "background_color": "#fff"
+}
