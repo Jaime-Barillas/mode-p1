@@ -1,0 +1,109 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Noir Restaurant</title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">
+        <script src="./js/core.js"></script>
+        <script src="./js/info.js"></script>
+        <!--<script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>-->
+    </head>
+    <body>
+        <nav class="navbar is-primary">
+            <div class="navbar-brand">
+                <a class="navbar-item" href="./">
+                    <img src="./assets/logo.png"/>
+                </a>
+                <div id="nav-toggle" class="navbar-burger" data-target="nav-menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+            <div id="nav-menu" class="navbar-menu">
+                <div class="navbar-start">
+                    <a class="navbar-item" href="./menu.html">
+                        Menu
+                    </a>
+                    <a class="navbar-item" href="./take-out.html">
+                        Take Out
+                    </a>
+                    <a class="navbar-item" href="./promotions.html">
+                        Promotions
+                    </a>
+                    <a class="navbar-item" href="./locations.html">
+                        Locations
+                    </a>
+                    <div class="navbar-item has-dropdown is-hoverable">
+                        <span class="navbar-link">More</span>
+                        <div class="navbar-dropdown">
+                            <a class="navbar-item" href="./about-us.html">
+                                About Us
+                            </a>
+                            <a class="navbar-item" href="./contact-us.html">
+                                Contact Us
+                            </a>
+                            <a class="navbar-item" href="./careers.html">
+                                Careers
+                            </a>
+                            <a class="navbar-item" href="./privacy-policy.html">
+                                Privacy Policy
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <section class="section" style="text-align:center;">
+            <h1 style="font-size:50px;"><b>Locations</b></h1><br/>
+            <table class="table" style="font-size:30px;" align="center">
+                <thead>
+                    <th>Address</th><th>City</th><th>Postal Code</th>
+                </thead>
+                <tbody id="tblLocations">
+                    
+                </tbody>
+            </table>
+        </section>
+
+        <footer class="footer">
+            <div class="container has-text-centered">
+                <div class="columns">
+                    <div class="column">
+                        <a href="./about-us.html">
+                            About Us
+                        </a>
+                    </div>
+                    <div class="column">
+                        <a href="./contact-us.html">
+                            Contact Us
+                        </a>
+                    </div>
+                    <div class="column">
+                        <a href="./careers.html">
+                            Careers
+                        </a>
+                    </div>
+                    <div class="column">
+                        <a href="./privacy-policy.html">
+                            Privacy Policy
+                        </a>
+                    </div>
+                </div>
+                <div class="content has-text-centered">
+                    Copyright &copy; 2019 Noir, Industries.
+                </div>
+            </div>
+        </footer>
+    </body>
+    <script>
+        function populateRow(e) {
+            document.getElementById("tblLocations").innerHTML += "<tr><td>" + e.Address + "</td><td>" + e.City + "</td><td>" + e.Postal_Code + "</td></tr>";
+        }
+
+        locations.forEach(element => populateRow(element));
+    </script>
+</html>
