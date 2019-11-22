@@ -1,4 +1,7 @@
 function createItemCard(item) {
+    let orders = JSON.parse(window.sessionStorage.getItem('modeOrders') || '[]');
+    let btnColourClass = orders.find(orderItem => JSON.parse(orderItem).id == item.id) ?
+        'is-success' : 'is-info';
     let card = document.createElement('div');
 
     card.classList.add('column');
@@ -19,7 +22,7 @@ function createItemCard(item) {
             </div>
             <div class="content">
                 <footer class="card-footer">
-                    <button id="btn${item.id}" class="button card-footer-item is-info" onclick="addToOrder(${item.id})">
+                    <button id="btn${item.id}" class="button card-footer-item ${btnColourClass}" onclick="addToOrder(${item.id})">
                         Add To Order
                     </button>
                 </footer>
