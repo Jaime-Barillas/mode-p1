@@ -1,6 +1,6 @@
 {
     "name": "Mode Project 1",
-    "short_name": "mode-p1",
+    "short_name": "Noir",
     "description": "A simple restaurant website",
     "icons": [
         {
@@ -10,7 +10,7 @@
         }
     ],
     "start_url": "/mode-p1/index.html",
-    "display": "fullscreen",
+    "display": "minimal-ui",
     "theme_color": "#fff",
     "background_color": "#fff"
 }
