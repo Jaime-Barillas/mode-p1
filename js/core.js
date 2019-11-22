@@ -13,7 +13,7 @@ function main() {
     console.log('Core JS module loaded...');
 
     // Visit counter
-    let counter = Number.parseInt(window.localStorage.getItem('modeCounter'));
+    let counter = Number.parseInt(window.localStorage.getItem('modeCounter') || 0);
     if (window.location.href == 'https://jaime-barillas.github.io/mode-p1/' ||
         window.location.href == 'https://jaime-barillas.github.io/mode-p1/index.html') {
         counter++;
