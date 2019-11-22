@@ -76,7 +76,7 @@ function main() {
 
     // Generate list of orders.
     for (order of getOrders()) {
-        orderList.append(createOrderCard(order));
+        orderList.append(createOrderCard(JSON.parse(order)));
     }
 }
 
