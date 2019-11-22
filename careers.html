@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Noir Restaurant</title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">
+        <script src="./js/core.js"></script>
+        <!--<script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>-->
+        <style type="text/css">
+            div.credentials{
+				display: inline-block;
+				text-align: center;
+				top: 50%;
+				left: 50%;
+				background-color: #ededed;
+				border: 5px solid #fff;
+				padding: .5em 3em;
+				z-index: 2;
+			}
+        </style>
+    </head>
+    <body>
+        <nav class="navbar is-primary">
+            <div class="navbar-brand">
+                <a class="navbar-item" href="./">
+                    <img src="./assets/logo.png"/>
+                </a>
+                <div id="nav-toggle" class="navbar-burger" data-target="nav-menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+            <div id="nav-menu" class="navbar-menu">
+                <div class="navbar-start">
+                    <a class="navbar-item" href="./menu.html">
+                        Menu
+                    </a>
+                    <a class="navbar-item" href="./take-out.html">
+                        Take Out
+                    </a>
+                    <a class="navbar-item" href="./promotions.html">
+                        Promotions
+                    </a>
+                    <a class="navbar-item" href="./locations.html">
+                        Locations
+                    </a>
+                    <div class="navbar-item has-dropdown is-hoverable">
+                        <span class="navbar-link">More</span>
+                        <div class="navbar-dropdown">
+                            <a class="navbar-item" href="./about-us.html">
+                                About Us
+                            </a>
+                            <a class="navbar-item" href="./contact-us.html">
+                                Contact Us
+                            </a>
+                            <a class="navbar-item" href="./careers.html">
+                                Careers
+                            </a>
+                            <a class="navbar-item" href="./privacy-policy.html">
+                                Privacy Policy
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="navbar-end">
+                    <div class="navbar-item buttons">
+                        <a class="button is-info">Sign up</a>
+                        <a class="button is-secondary">Log in</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <section class="has-text-centered">
+            <h2 class="title is-medium">You wish to work for Noir Restaurant?</h2>
+            <h2 class="title is-medium">Fill in the application below!</h2>
+            <br/>
+		<div class="credentials" name="application" id="application">
+		<h1 class="is-size-2">Job Application</h1>
+		<br/>
+			<div class="columns">
+				<div class="column"><strong name="firstName">First Name</strong></div>
+				<div class="column"><input type="text" id="fName" value="" size="22" /></div>
+			</div>
+			<div class="columns">
+				<div class="column"><strong name="lastName">Last Name</strong></div>
+				<div class="column"><input type="text" id="lName" value="" size="22" /></div>
+			</div>
+			<div class="columns">
+				<div class="column"><strong name="emailLabel">Email</strong></div>
+				<div class="column"><input type="email" id="email" value="" size="22" /></div>
+			</div>
+			<div class="columns">
+				<div class="column"><strong name="posLabel">Desired Position</strong></div>
+				<div class="column"><select>
+					<option>Cook</option>
+					<option>Dishwasher</option>
+					<option>Host</option>
+					<option>Maintenance</option>
+					<option>Server</option>
+					<option>Manager</option>
+				</select></div>
+			</div>
+			<div class="columns">
+				<div class="column"><strong name="resumeLabel">Upload Resume </strong> (Optional)</div>
+				<div class="column"><input name="uploadfile" type="file" id="uploadfile" /></div>
+			</div>
+			<div class="columns">
+				<div class="column"><button id="apply" name="apply">Apply Now!</button></div>
+			</div>
+			<div class="columns">
+				<div class="column"><h3 id="submitted"></h3></div>
+			</div>	
+        </div>    
+        </section>
+		<script>
+			function validateForm(){
+				var isValid = true;
+				
+				if(document.getElementById("fName").value.length<=0){
+					isValid = false;
+					document.getElementById("fName").placeholder = "First name is required";
+				}
+				
+				if(document.getElementById("lName").value.length<=0){
+					isValid = false;
+					document.getElementById("lName").placeholder = "Last name is required";
+				}
+				
+				if(document.getElementById("email").value.length<=0){
+					isValid = false;
+					document.getElementById("email").placeholder = "You must enter an email";
+				}
+				
+				return isValid;
+			};
+			
+			function submitResume(){
+				document.getElementById("submitted").innerHTML = "Thank you for submitting an application. <br/>Your application will be reviewed and you will be contacted <br/>if you are selected for an interview.";
+			}
+			
+			document.getElementById("apply").onclick = function()
+			{
+				if(validateForm()){
+					submitResume();
+				}
+			}
+
+		</script>
+        <footer class="footer">
+            <div class="container has-text-centered">
+                <div class="columns">
+                    <div class="column">
+                        <a href="./about-us.html">
+                            About Us
+                        </a>
+                    </div>
+                    <div class="column">
+                        <a href="./contact-us.html">
+                            Contact Us
+                        </a>
+                    </div>
+                    <div class="column">
+                        <a href="./careers.html">
+                            Careers
+                        </a>
+                    </div>
+                    <div class="column">
+                        <a href="./privacy-policy.html">
+                            Privacy Policy
+                        </a>
+                    </div>
+                </div>
+                <div class="content has-text-centered">
+                    Copyright &copy; 2019 Noir, Industries.
+                </div>
+            </div>
+        </footer>
+    </body>
+</html>
