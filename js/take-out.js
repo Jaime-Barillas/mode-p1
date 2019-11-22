@@ -1,5 +1,5 @@
 function getOrders() {
-    return JSON.parse(window.sessionStorage.getItem('modeOrders'));
+    return JSON.parse(window.sessionStorage.getItem('modeOrders') || '[]');
 }
 
 function createOrderCard(order) {

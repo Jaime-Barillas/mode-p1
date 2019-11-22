@@ -32,7 +32,7 @@ function createItemCard(item) {
 }
 
 function removeFromOrder(id) {
-    let orders = JSON.parse(window.sessionStorage.getItem('modeOrders'));
+    let orders = JSON.parse(window.sessionStorage.getItem('modeOrders') || '[]');
 
     orders = orders.filter(item => JSON.parse(item).id != id);
 
@@ -47,9 +47,9 @@ function removeFromOrder(id) {
 }
 
 function addToOrder(id) {
-    let orders = JSON.parse(window.sessionStorage.getItem('modeOrders'));
+    let orders = JSON.parse(window.sessionStorage.getItem('modeOrders') || '[]');
 
-    orders += JSON.stringify(menuItems[id]);
+    orders.push(JSON.stringify(menuItems[id - 1]));
 
     window.sessionStorage.setItem('modeOrders', JSON.stringify(orders));
 
