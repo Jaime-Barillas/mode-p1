@@ -34,7 +34,7 @@ function createItemCard(item) {
 function removeFromOrder(id) {
     let orders = JSON.parse(window.sessionStorage.getItem('modeOrders'));
 
-    orders = orders.filter(item => item.id != id);
+    orders = orders.filter(item => JSON.parse(item).id != id);
 
     window.sessionStorage.setItem('modeOrders', JSON.stringify(orders));
 
@@ -49,7 +49,7 @@ function removeFromOrder(id) {
 function addToOrder(id) {
     let orders = JSON.parse(window.sessionStorage.getItem('modeOrders'));
 
-    orders += menuItems[id];
+    orders += JSON.stringify(menuItems[id]);
 
     window.sessionStorage.setItem('modeOrders', JSON.stringify(orders));
 
