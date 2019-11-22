@@ -9,15 +9,15 @@
         <!--<script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>-->
         <style type="text/css">
             div.credentials{
-				display: inline-block;
-				text-align: center;
-				top: 50%;
-				left: 50%;
-				background-color: #ededed;
-				border: 5px solid #fff;
-				padding: .5em 3em;
-				z-index: 2;
-			}
+                display: inline-block;
+                text-align: center;
+                top: 50%;
+                left: 50%;
+                background-color: #ededed;
+                border: 5px solid #fff;
+                padding: .5em 3em;
+                z-index: 2;
+            }
         </style>
     </head>
     <body>
@@ -66,61 +66,89 @@
                 </div>
                 <div class="navbar-end">
                     <div class="navbar-item buttons">
-                        <a class="button is-info" href="./signup.html">Sign up</a>
-                        <a class="button is-secondary" href="./login.html">Log in</a>
+                        <a class="button is-info">Sign up</a>
+                        <a class="button is-secondary">Log in</a>
                     </div>
                 </div>
             </div>
         </nav>
 
         <section class="has-text-centered">
-		
-		<div class="credentials">
-		<h1 class="is-size-2">Sign Up</h1>
-		<br/>
-        <form method="post" type="submit" name="myForm" id="myForm" onsubmit="return validateForm();" action="take-out.html">
-			<div class="columns">
-				<div class="column"><strong id="idLabel">Username</strong></div>
-				<div class="column"><input type="text" name="id" size="22"/></div>
-			</div>
-			<div class="columns">
-				<div class="column"><strong name="passLabel">Password</strong></div>
-				<div class="column"><input type="password" name="pass" value="" size="22" /></div>
-			</div>
-			<div class="columns">
-				<div class="column"><strong name="confirmLabel">Confirm Password</strong></div>
-				<div class="column"><input type="password" name="confirmpass" value="" size="22" /></div>
-			</div>
-			<div class="columns">
-				<div class="column"><input type="submit" value="Sign Up" />
-					<input type="reset" value="Reset"/> </div>
-			</div>			
-		</form>
-        </div>    
+
+            <div class="credentials">
+                <h1 class="is-size-2">Sign Up</h1>
+                <br/>
+                <form type="submit" name="myForm" id="myForm" onsubmit="return validateForm();" action="menu.html">
+                    <div class="columns">
+                        <div class="column"><strong id="idLabel">Username</strong></div>
+                        <div class="column"><input type="text" name="id" size="22"/></div>
+                    </div>
+                    <div class="columns">
+                        <div class="column"><strong name="firstName">First Name</strong></div>
+                        <div class="column"><input type="text" name="fName" value="" size="22" /></div>
+                    </div>
+                    <div class="columns">
+                        <div class="column"><strong name="lastName">Last Name</strong></div>
+                        <div class="column"><input type="text" name="lName" value="" size="22" /></div>
+                    </div>
+                    <div class="columns">
+                        <div class="column"><strong name="emailLabel">Email</strong></div>
+                        <div class="column"><input type="email" name="email" value="" size="22" /></div>
+                    </div>
+                    <div class="columns">
+                        <div class="column"><strong name="passLabel">Password</strong></div>
+                        <div class="column"><input type="password" name="pass" value="" size="22" /></div>
+                    </div>
+                    <div class="columns">
+                        <div class="column"><strong name="confirmLabel">Confirm Password</strong></div>
+                        <div class="column"><input type="password" name="confirmpass" value="" size="22" /></div>
+                    </div>
+                    <div class="columns">
+                        <div class="column"><input type="submit" value="Sign Up" />
+                            <input type="reset" value="Reset"/> </div>
+                    </div>
+                </form>
+            </div>
         </section>
-		<script>
-			function validateForm(){
-				var isValid = true;
-				
-				if(document.myForm.id.value.length<=0){
-					isValid = false;
-					document.myForm.id.placeholder = "You must enter a username";
-				}
-				
-				if(document.myForm.pass.value.length<=0){
-					isValid = false;
-					document.myForm.pass.placeholder = "You must enter a password";
-				}
-				
-				if(document.myForm.confirmpass.value != document.myForm.pass.value){
-					isValid = false;
-					document.myForm.confirmpass.value = "";
-					document.myForm.confirmpass.placeholder = "The passwords must match";
-				}
-				
-				return isValid;
-			};
-		</script>
+        <script>
+            function validateForm(){
+                var isValid = true;
+
+                if(document.myForm.id.value.length<=0){
+                    isValid = false;
+                    document.myForm.id.placeholder = "You must enter a username";
+                }
+
+                if(document.myForm.fName.value.length<=0){
+                    isValid = false;
+                    document.myForm.fName.placeholder = "First name is required";
+                }
+
+                if(document.myForm.lName.value.length<=0){
+                    isValid = false;
+                    document.myForm.lName.placeholder = "Last name is required";
+                }
+
+                if(document.myForm.email.value.length<=0){
+                    isValid = false;
+                    document.myForm.email.placeholder = "You must enter an email";
+                }
+
+                if(document.myForm.pass.value.length<=0){
+                    isValid = false;
+                    document.myForm.pass.placeholder = "You must enter a password";
+                }
+
+                if(document.myForm.confirmpass.value != document.myForm.pass.value){
+                    isValid = false;
+                    document.myForm.confirmpass.value = "";
+                    document.myForm.confirmpass.placeholder = "The passwords must match";
+                }
+
+                return isValid;
+            };
+
+        </script>
         <footer class="footer">
             <div class="container has-text-centered">
                 <div class="columns">
