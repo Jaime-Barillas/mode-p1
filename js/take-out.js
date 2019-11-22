@@ -1,5 +1,3 @@
-window.sessionStorage.setItem('modeOrders', JSON.stringify([{name: 'test', desc: 'test'}]));
-
 function getOrders() {
     return JSON.parse(window.sessionStorage.getItem('modeOrders'));
 }
@@ -60,6 +58,9 @@ function main() {
         while(orderList.firstChild) {
             orderList.firstChild.remove();
         }
+
+        // Clear session storage.
+        window.sessionStorage.setItem('modeOrders', '[]');
     });
 
     let btnOrder = document.getElementById('btnOrder');
