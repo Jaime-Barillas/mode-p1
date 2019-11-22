@@ -18,7 +18,7 @@ function main() {
         window.location.href == 'https://jaime-barillas.github.io/mode-p1/index.html') {
         counter++;
     }
-    window.localStorage.setItem(counter.toString());
+    window.localStorage.setItem('modeCounter', counter.toString());
 
     let footer = document.querySelector('body > footer');
     let counterElement = document.createElement('div');
